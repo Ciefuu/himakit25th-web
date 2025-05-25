@@ -10,7 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     /* optional: overflow: hidden; */
-    position: relative; 
+    position: relative;
 }
 
 body::before,
