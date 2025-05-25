@@ -12,7 +12,7 @@
       <h1>🎉 HIMAKIT Birthday ke-25 🎉</h1>
       <p>Selamat ulang tahun untuk HIMAKIT tercinta! 💙</p>
       <p>27 Mei 2025 - Gedung Serbaguna STTT Bandung</p>
-      <img src="LOGO_HIMAKIT_POLITEKNIK_STTT_BANDUNG.jpg" alt="Logo HIMAKIT">
+      <img src="LOGO_HIMAKIT_POLITEKNIK_STTT_BANDUNG.jpg" alt="Logo HIMAKIT" />
 
       <div class="countdown">
         <h2>Countdown ke Acara:</h2>
@@ -32,47 +32,6 @@
       <p class="footer">Dari: Stanly Pranoto - Mahasiswa Kimia Tekstil</p>
     </div>
 
-    <script>
-    const eventDate = new Date("May 27, 2025 16:00:00").getTime();
-    const timer = document.getElementById("timer");
-
-    const countdownInterval = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      timer.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-
-      if (distance < 0) {
-        clearInterval(countdownInterval); // Hentikan countdown
-            timer.innerHTML = "🎉 Acara telah dimulai! 🎉"; 
-library
-            confetti({
-                particleCount: 100,
-                spread: 70, 
-                origin: { y: 0.6 }             });
-
-            setTimeout(() => {
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            }, 250); 
-            setTimeout(() => {
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            }, 500);
-        }
- }, 1000);
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
    </script>
   </body>
