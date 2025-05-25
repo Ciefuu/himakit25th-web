@@ -1,5 +1,14 @@
-const eventDate = new Date("May 27, 2025 16:00:00").getTime();
+const eventDate = new Date("May 25, 2025 13:45:00").getTime();
 const timer = document.getElementById("timer");
+
+function fireworkBurst(x, y) {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { x, y },
+    colors: ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd']
+  });
+}
 
 const countdownInterval = setInterval(() => {
   const now = new Date().getTime();
@@ -14,15 +23,24 @@ const countdownInterval = setInterval(() => {
     timer.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
   } else {
     clearInterval(countdownInterval);
-    timer.innerHTML = "🎉 Acara telah dimulai! 🎉";
+    timer.innerHTML = "🎆 Acara telah dimulai! 🎆";
 
-    // Efek confetti 3x
-    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+    const fireworkPattern = [
+      { x: 0.3, y: 0.5 },
+      { x: 0.5, y: 0.4 },
+      { x: 0.7, y: 0.5 },
+      { x: 0.4, y: 0.7 },
+      { x: 0.6, y: 0.6 }
+    ];
+
+    fireworkPattern.forEach((pos, i) => {
+      setTimeout(() => fireworkBurst(pos.x, pos.y), i * 400);
+    });
+
     setTimeout(() => {
-      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-    }, 250);
-    setTimeout(() => {
-      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-    }, 500);
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => fireworkBurst(Math.random(), Math.random()), i * 500);
+      }
+    }, 2500);
   }
 }, 1000);
