@@ -1,4 +1,4 @@
-const eventDate = new Date("May 27, 2025 16:10:00").getTime();
+const eventDate = new Date("May 27, 2025 16:23:00").getTime();
 const timer = document.getElementById("timer");
 
 function fireworkBurst(x, y) {
